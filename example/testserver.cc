@@ -18,7 +18,7 @@ class EchoServer
 public:
 	EchoServer(EventLoop *loop, const InetAddress &addr, const std::string &name)
 		: server_(loop, addr, name)
-		, loop_(loop)
+		, loop_(loop){
 		// 注册回调函数
 		server_.setConnectionCallback(
 			std::bind(&EchoServer::onConnection, this, std::placeholders::_1)
