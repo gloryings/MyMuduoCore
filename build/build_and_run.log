@@ -1,0 +1,87 @@
+Entering build directory...
+[ 90%] Built target MyMuduoCore
+[100%] Built target testserver
+Entering build directory...
+[ 90%] Built target MyMuduoCore
+[100%] Built target testserver
+Entering build directory...
+[ 90%] Built target MyMuduoCore
+[100%] Built target testserver
+Entering build directory...
+[ 90%] Built target MyMuduoCore
+[100%] Built target testserver
+Entering build directory...
+[ 90%] Built target MyMuduoCore
+[100%] Built target testserver
+Finished build and run
+Entering build directory...
+[ 90%] Built target MyMuduoCore
+[ 95%] Linking CXX executable ../../example/testserver
+[100%] Built target testserver
+Finished build and run
+Entering build directory...
+Scanning dependencies of target MyMuduoCore
+[  5%] Building CXX object src/CMakeFiles/MyMuduoCore.dir/EventLoopThreadPool.cc.o
+[ 10%] Linking CXX shared library ../../lib/libMyMuduoCore.so
+[ 90%] Built target MyMuduoCore
+Scanning dependencies of target testserver
+[ 95%] Building CXX object example/CMakeFiles/testserver.dir/testserver.cc.o
+[100%] Linking CXX executable ../../example/testserver
+[100%] Built target testserver
+Finished build and run
+Entering build directory...
+[ 90%] Built target MyMuduoCore
+[ 95%] Linking CXX executable ../../example/testserver
+[100%] Built target testserver
+Finished build and run
+Entering build directory...
+[ 90%] Built target MyMuduoCore
+Scanning dependencies of target testserver
+[ 95%] Building CXX object example/CMakeFiles/testserver.dir/testserver.cc.o
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:27:3: error: ‘server_’ does not name a type
+   27 |   server_.setMessageCallback(
+      |   ^~~~~~~
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:32:3: error: ‘server_’ does not name a type
+   32 |   server_.setThreadNum(3);
+      |   ^~~~~~~
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:33:3: error: expected ‘;’ after class definition
+   33 |  }
+      |   ^
+      |   ;
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc: In constructor ‘EchoServer::EchoServer(EventLoop*, const InetAddress&, const string&)’:
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:20:5: error: class ‘EchoServer’ does not have any field named ‘server_’
+   20 |   : server_(loop, addr, name)
+      |     ^~~~~~~
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:21:5: error: class ‘EchoServer’ does not have any field named ‘loop_’
+   21 |   , loop_(loop)
+      |     ^~~~~
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:23:3: error: expected ‘{’ before ‘server_’
+   23 |   server_.setConnectionCallback(
+      |   ^~~~~~~
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc: In function ‘void start()’:
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:37:3: error: ‘server_’ was not declared in this scope
+   37 |   server_.start();
+      |   ^~~~~~~
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc: At global scope:
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:40:1: error: expected unqualified-id before ‘private’
+   40 | private:
+      | ^~~~~~~
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:57:12: error: no matching function for call to ‘TcpServer::TcpServer()’
+   57 |  TcpServer server_;
+      |            ^~~~~~~
+In file included from /home/ljh/Desktop/MyMuduoCore/example/testserver.cc:3:
+/home/ljh/Desktop/MyMuduoCore/include/TcpServer.h:34:5: note: candidate: ‘TcpServer::TcpServer(EventLoop*, const InetAddress&, const string&, TcpServer::Option)’
+   34 |     TcpServer(EventLoop *loop,
+      |     ^~~~~~~~~
+/home/ljh/Desktop/MyMuduoCore/include/TcpServer.h:34:5: note:   candidate expects 4 arguments, 0 provided
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:59:1: error: expected declaration before ‘}’ token
+   59 | };
+      | ^
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc: In function ‘int main()’:
+/home/ljh/Desktop/MyMuduoCore/example/testserver.cc:65:9: error: ‘class EchoServer’ has no member named ‘start’
+   65 |  server.start(); //负责管理tcpconnection
+      |         ^~~~~
+make[2]: *** [example/CMakeFiles/testserver.dir/build.make:63: example/CMakeFiles/testserver.dir/testserver.cc.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:142: example/CMakeFiles/testserver.dir/all] Error 2
+make: *** [Makefile:84: all] Error 2
+Finished build and run
